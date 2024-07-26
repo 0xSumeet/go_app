@@ -40,30 +40,30 @@ cp .env.example .env
 5. This is a backend project, so you can use [Postman](https://www.postman.com/) or **curl command** (linux) to interact with the application.
 
 #### Sending request
-- **Register User**
+**Register User**
   - Make a `POST` request to `http://localhost:8080/register` with the following JSON body
     ```json
     {
-    "username": "admin",
-    "password": "admin123",
-    "role": "Administrator"
+      "username": "admin",
+      "password": "admin123",
+      "role": "Administrator"
     }
     ```
-- **Login User**
+**Login User**
   - Make a `POST` request to `http://localhost:8080/login` with the following JSON body:
     ```json
     {
-    "username": "admin",
-    "password": "admin123"
+      "username": "admin",
+      "password": "admin123"
     }
     ```
-- **Logout User**
+**Logout User**
   - Make a `POST` request to `http://localhost:8080/logout`
 
-- **Access Protection Endpoint**
+**Access Protection Endpoint**
   - Make a `GET` request to `http://localhost:8080/customer-management` with Header as `Authorization: Bearer <your_jwt_token>`
 
-- **Note :** The `permission` table data have not been inserted. So, it needs to be added manually for providing certain read/write permission to the departments. You can use tool like `psql`, pgAdmin or DBeaver to manually check and insert data into the database. 
+**Note :** The `permission` table data have not been inserted. So, it needs to be added manually for providing certain read/write permission to the departments. You can use tool like `psql`, pgAdmin or DBeaver to manually check and insert data into the database. 
   ```sql
   INSERT INTO permissions (role, module, access) VALUES 
   ('Sales', 'customer-management', 'read/write'),

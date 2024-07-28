@@ -63,7 +63,7 @@ cp .env.example .env
 **Access Protection Endpoint**
   - Make a `GET` request to `http://localhost:8080/customer-management` with Header as `Authorization: Bearer <your_jwt_token>`
 
-**Note :** The `permission` table data have not been inserted. So, it needs to be added manually for providing certain read/write permission to the departments. You can use tool like `psql`, pgAdmin or DBeaver to manually check and insert data into the database. 
+**Note :** The `permission` table needs to be manually poplulated for providing certain read/write permission to the departments. You can use tool like `psql`, pgAdmin or DBeaver to manually check and insert data into the database. 
   ```sql
   INSERT INTO permissions (role, module, access) VALUES 
   ('Sales', 'customer-management', 'read/write'),
